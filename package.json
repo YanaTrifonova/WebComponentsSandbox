@@ -1,0 +1,11 @@
+{
+  "name": "web-components-sandbox",
+  "version": "1.0.0",
+  "description": "HTML5 Web Component Fundamentals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "YanaTrifonova",
+  "license": "ISC"
+}
