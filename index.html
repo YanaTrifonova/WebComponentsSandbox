@@ -18,50 +18,12 @@
     <link rel="icon" href="/favicon.ico">
     <!--    <link rel="icon" href="/favicon.svg" type="image/svg+xml">-->
     <!--    <link rel="apple-touch-icon" href="/apple-touch-icon.png">-->
+    <script src="//unpkg.com/@ungap/custom-elements"></script>
 </head>
 
 <body>
-<comment-form>
-    <h1>Hello world</h1>
-    <p>This is Web components sandbox</p>
-</comment-form>
+    <name-tag></name-tag>
 
-<template id="template">
-    <fieldset>
-        <legend>
-            <slot select="h1"></slot>
-        </legend>
-
-        <slot select="p"></slot>
-
-<!--        <label>-->
-<!--            <textarea style="width: 400px; height: 200px;"></textarea>-->
-<!--        </label>-->
-
-<!--        <input type="submit" value="Submit content">-->
-
-<!--        <slot select=".footer"></slot>-->
-    </fieldset>
-</template>
-
-<script>
-  class MyElement extends HTMLElement {
-    constructor() {
-      super();
-      // элемент создан
-    }
-  }
-  //
-  // const commentProto = Object.create(HTMLElement.prototype);
-  //
-  // commentProto.createdCallback = function () {
-  //   const template = document.querySelector('template');
-  //   const shadow = this.attachShadow({mode: 'open'});
-  //   shadow.appendChild(document.importNode(template.content, true))
-  // }
-
-  customElements.define('comment-form', MyElement);
-</script>
-
+    <script src="src/name-tag.js" type="module"></script>
 </body>
 </html>
