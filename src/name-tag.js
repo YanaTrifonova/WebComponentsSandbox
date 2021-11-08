@@ -98,17 +98,17 @@ customElements.define(
         let tagTitle = this.shadowRoot.querySelector(".tag-title");
         let tagCopy = this.shadowRoot.querySelector(".tag-copy");
 
-        if ( e.detail === "default") {
+        if (e.detail === "default") {
           tagTitle.style.fontSize = 32 + "px";
           tagCopy.style.fontSize = 18 + "px";
         }
-        if ( e.detail === "small") {
-          tagTitle.style.fontSize = 32/1.2 + "px";
-          tagCopy.style.fontSize = 18/1.2 + "px";
+        if (e.detail === "small") {
+          tagTitle.style.fontSize = 32 / 1.2 + "px";
+          tagCopy.style.fontSize = 18 / 1.2 + "px";
         }
-        if ( e.detail === "big") {
-          tagTitle.style.fontSize = 32*1.2 + "px";
-          tagCopy.style.fontSize = 18*1.2 + "px";
+        if (e.detail === "big") {
+          tagTitle.style.fontSize = 32 * 1.2 + "px";
+          tagCopy.style.fontSize = 18 * 1.2 + "px";
         }
       });
 
