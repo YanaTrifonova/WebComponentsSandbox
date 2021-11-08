@@ -94,36 +94,36 @@ customElements.define(
         ctx.stroke();
       };
 
-      window.addEventListener("font-size", (e) => {
+      window.addEventListener("font-size", (event) => {
         let tagTitle = this.shadowRoot.querySelector(".tag-title");
         let tagCopy = this.shadowRoot.querySelector(".tag-copy");
 
-        if (e.detail === "default") {
+        if (event.detail === "default") {
           tagTitle.style.fontSize = 32 + "px";
           tagCopy.style.fontSize = 18 + "px";
         }
-        if (e.detail === "small") {
+        if (event.detail === "small") {
           tagTitle.style.fontSize = 32 / 1.2 + "px";
           tagCopy.style.fontSize = 18 / 1.2 + "px";
         }
-        if (e.detail === "big") {
+        if (event.detail === "big") {
           tagTitle.style.fontSize = 32 * 1.2 + "px";
           tagCopy.style.fontSize = 18 * 1.2 + "px";
         }
       });
 
-      window.addEventListener("font-style", (e) => {
-        this.shadowRoot.querySelector(".tag-title").style.fontFamily = e.detail;
-        this.shadowRoot.querySelector(".tag-copy").style.fontFamily = e.detail;
+      window.addEventListener("font-style", (event) => {
+        this.shadowRoot.querySelector(".tag-title").style.fontFamily = event.detail;
+        this.shadowRoot.querySelector(".tag-copy").style.fontFamily = event.detail;
       });
 
-      window.addEventListener("background-color", (e) => {
-        this.shadowRoot.querySelector(".tag").style.backgroundColor = e.detail;
+      window.addEventListener("background-color", (event) => {
+        this.shadowRoot.querySelector(".tag").style.backgroundColor = event.detail;
       });
 
-      window.addEventListener("font-color", (e) => {
-        this.shadowRoot.querySelector(".tag-title").style.color = e.detail;
-        this.shadowRoot.querySelector(".tag-copy").style.color = e.detail;
+      window.addEventListener("font-color", (event) => {
+        this.shadowRoot.querySelector(".tag-title").style.color = event.detail;
+        this.shadowRoot.querySelector(".tag-copy").style.color = event.detail;
       });
     }
   }
