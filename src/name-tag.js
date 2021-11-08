@@ -15,7 +15,7 @@ customElements.define(
              margin: 0 auto;
              width: 500px;
              height: 355px;
-             background-color: red;
+             background-color: #ff0000;
              border-radius: 20px;  
          }
          .tag-header {
@@ -31,7 +31,7 @@ customElements.define(
               margin: 0;
           }
          .tag-copy {
-              color: white;
+              color: #ffffff;
               font-family: Arial, Helvetica, sans-serif;
               font-size: 18px;
               letter-spacing: 0.1em;
@@ -42,7 +42,7 @@ customElements.define(
               width: 100%;
               height: 65%;
               cursor: default;
-              background-color: white;
+              background-color: #ffffff;
           }
          </style>
          
@@ -115,7 +115,16 @@ customElements.define(
       window.addEventListener("font-style", (e) => {
         this.shadowRoot.querySelector(".tag-title").style.fontFamily = e.detail;
         this.shadowRoot.querySelector(".tag-copy").style.fontFamily = e.detail;
-      })
+      });
+
+      window.addEventListener("background-color", (e) => {
+        this.shadowRoot.querySelector(".tag").style.backgroundColor = e.detail;
+      });
+
+      window.addEventListener("font-color", (e) => {
+        this.shadowRoot.querySelector(".tag-title").style.color = e.detail;
+        this.shadowRoot.querySelector(".tag-copy").style.color = e.detail;
+      });
     }
   }
 )

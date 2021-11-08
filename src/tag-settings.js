@@ -63,12 +63,24 @@ customElements.define(
                                                                                                  class="font-size__label-big">A</label>
             </div>
         </div>
+        
+        <div class="settings__group">
+            <label for="backgroundColor">Background colour</label>
+            <input type="color" value="#ff0000" id="backgroundColor">
+        </div>
+        
+        <div class="settings__group">
+            <label for="fontColor">Font colour</label>
+            <input type="color" value="#ffffff" id="fontColor">
+        </div>
+        
+        <h2>Tag styling</h2>
     </div>
       `;
 
       this.shadowRoot.querySelectorAll('input[name="fontSizeForm"]').forEach((input) => {
         input.addEventListener('click', (event) => {
-          input.dispatchEvent(
+          dispatchEvent(
             new CustomEvent("font-size", {
               bubbles: true,
               composed: true,
@@ -81,6 +93,26 @@ customElements.define(
       this.shadowRoot.querySelector('select[id="fontStyle"]').addEventListener('change', (event) => {
         dispatchEvent(
           new CustomEvent("font-style", {
+            bubbles: true,
+            composed: true,
+            detail: event.target.value,
+          })
+        )
+      });
+
+      this.shadowRoot.querySelector('input[id="backgroundColor"]').addEventListener('change', (event) => {
+        dispatchEvent(
+          new CustomEvent("background-color", {
+            bubbles: true,
+            composed: true,
+            detail: event.target.value,
+          })
+        )
+      })
+
+      this.shadowRoot.querySelector('input[id="fontColor"]').addEventListener('change', (event) => {
+        dispatchEvent(
+          new CustomEvent("font-color", {
             bubbles: true,
             composed: true,
             detail: event.target.value,
