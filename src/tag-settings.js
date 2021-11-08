@@ -45,26 +45,48 @@ customElements.define(
     
         <div class="settings__group">
             <label for="fontStyle">Font style:</label>
-            <select name="fontStyle" id="fontStyle">
-                <option value="Helvetica">Helvetica</option>
-                <option value="Bodoni">Bodoni</option>
-                <option value="Futura">Futura</option>
+            <select id="fontStyle">
+                <option name="fontStyle" value="Arial">Arial</option>
+                <option name="fontStyle" value="Bodoni">Bodoni</option>
+                <option name="fontStyle" value="Futura">Futura</option>
             </select>
         </div>
     
         <div id="fontSizeForm" class="settings__group">
             <label for="fontSizeForm">Font size:</label>
             <div>
-                <input type="radio" id="small" name="fontSizeForm" class="font-size__input"><label for="small"
+                <input type="radio" value="small" name="fontSizeForm" class="font-size__input"><label for="small"
                                                                                                    class="font-size__label-small">A</label>
-                <input type="radio" id="default" name="fontSizeForm" class="font-size__input" checked><label for="default"
+                <input type="radio" value="default" name="fontSizeForm" class="font-size__input" checked><label for="default"
                                                                                                              class="font-size__label-default">A</label>
-                <input type="radio" id="big" name="fontSizeForm" class="font-size__input"><label for="big"
+                <input type="radio" value="big" name="fontSizeForm" class="font-size__input"><label for="big"
                                                                                                  class="font-size__label-big">A</label>
             </div>
         </div>
     </div>
       `;
+
+      this.shadowRoot.querySelectorAll('input[name="fontSizeForm"]').forEach((input) => {
+        input.addEventListener('click', (event) => {
+          input.dispatchEvent(
+            new CustomEvent("font-size", {
+              bubbles: true,
+              composed: true,
+              detail: event.target.value,
+            })
+          );
+        })
+      });
+
+      this.shadowRoot.querySelector('select[id="fontStyle"]').addEventListener('change', (event) => {
+        dispatchEvent(
+          new CustomEvent("font-style", {
+            bubbles: true,
+            composed: true,
+            detail: event.target.value,
+          })
+        )
+      })
     }
   }
 )

@@ -14,7 +14,7 @@ customElements.define(
              border: 1px solid rgba(0, 0, 0, 0.7);
              margin: 0 auto;
              width: 500px;
-             height: 300px;
+             height: 355px;
              background-color: red;
              border-radius: 20px;  
          }
@@ -93,6 +93,29 @@ customElements.define(
         ctx.closePath();
         ctx.stroke();
       };
+
+      window.addEventListener("font-size", (e) => {
+        let tagTitle = this.shadowRoot.querySelector(".tag-title");
+        let tagCopy = this.shadowRoot.querySelector(".tag-copy");
+
+        if ( e.detail === "default") {
+          tagTitle.style.fontSize = 32 + "px";
+          tagCopy.style.fontSize = 18 + "px";
+        }
+        if ( e.detail === "small") {
+          tagTitle.style.fontSize = 32/1.2 + "px";
+          tagCopy.style.fontSize = 18/1.2 + "px";
+        }
+        if ( e.detail === "big") {
+          tagTitle.style.fontSize = 32*1.2 + "px";
+          tagCopy.style.fontSize = 18*1.2 + "px";
+        }
+      });
+
+      window.addEventListener("font-style", (e) => {
+        this.shadowRoot.querySelector(".tag-title").style.fontFamily = e.detail;
+        this.shadowRoot.querySelector(".tag-copy").style.fontFamily = e.detail;
+      })
     }
   }
 )
