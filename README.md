@@ -42,3 +42,13 @@ git clone git@github.com:YanaTrifonova/WebComponentsSandbox.git
 ```
 npm start
 ```
+
+## Example
+
+### Template
+
+![Template](https://raw.githubusercontent.com/YanaTrifonova/WebComponentsSandbox/main/img/A_Basic_HTML5_Template_temp.png)
+
+### My name is Yana
+
+![My name is Yana](https://raw.githubusercontent.com/YanaTrifonova/WebComponentsSandbox/main/img/A_Basic_HTML5_Template_example.png)
