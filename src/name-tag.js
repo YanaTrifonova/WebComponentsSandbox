@@ -125,6 +125,29 @@ customElements.define(
         this.shadowRoot.querySelector(".tag-title").style.color = event.detail;
         this.shadowRoot.querySelector(".tag-copy").style.color = event.detail;
       });
+
+      window.addEventListener("brush-decrease", (event) => {
+        const canvas = this.shadowRoot.querySelector('#canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.lineWidth = event.detail;
+      });
+
+      window.addEventListener("brush-increase", (event) => {
+        const canvas = this.shadowRoot.querySelector('#canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.lineWidth = event.detail;
+      });
+
+      window.addEventListener("canvas-color", (event) => {
+        const canvas = this.shadowRoot.querySelector('#canvas');
+        canvas.style.backgroundColor = event.detail;
+      });
+
+      window.addEventListener("brush-color", (event) => {
+        const canvas = this.shadowRoot.querySelector('#canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.strokeStyle = event.detail;
+      })
     }
   }
 )
