@@ -17,6 +17,11 @@ customElements.define(
             margin: 20px auto;
         }
         
+        .about-me {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
         .settings__container {
             display: flex;
             flex-direction: row;
@@ -56,6 +61,8 @@ customElements.define(
     </style>
     
     <div class="settings">
+        <a target="_blank" rel="noopener noreferrer" 
+           href="https://www.linkedin.com/in/yana-trifonova/" class="about-me">about me</a>
         <h1>Settings</h1>
         
         <div class="settings__container">
