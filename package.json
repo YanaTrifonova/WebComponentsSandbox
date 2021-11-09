@@ -4,7 +4,8 @@
   "description": "HTML5 Web Component Fundamentals",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx serve",
+    "build": "npx serve -s build"
   },
   "author": "YanaTrifonova",
   "license": "ISC"
